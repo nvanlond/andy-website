@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="andy.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="andy.html" class="button-75"><span>About</span></a>
+      <a href="projects.html" class="button-75"><span>Projects</span></a>
+      <a href="sports.html" class="button-75"><span>Sports Highlights</span></a>
+
+      <a href="contact.html" class="button-75"><span>Contact</span></a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Contact Me</h1>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>Email: myemail@example.com</p>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Andrew's Portfolio</footer>
+    <script>
+      const content = document.querySelector(".content");
+      const hero = document.querySelector(".hero");
+
+      window.addEventListener("scroll", () => {
+        const trigger = window.scrollY > 20;
+
+        if (trigger) {
+          content.classList.add("reveal");
+          hero.classList.add("scrolled");
+        } else {
+          content.classList.remove("reveal");
+          hero.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>

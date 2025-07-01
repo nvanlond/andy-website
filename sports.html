@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Highlights</title>
+    <link rel="stylesheet" href="andy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Honk:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="andy.html" class="button-75"><span>About</span></a>
+      <a href="projects.html" class="button-75"><span>Projects</span></a>
+      <a href="sports.html" class="button-75"><span>Sports Highlights</span></a>
+      <a href="contact.html" class="button-75"><span>Contact</span></a>
+    </nav>
+
+    <header class="hero sports-page">
+      <div class="hero-content">
+        <h1>Highlights</h1>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="projects" class="card">
+        <h2>Football - <i>Longsnapper</i></h2>
+
+        <h2 style="text-align: center">University Kicks</h2>
+        <div class="swiper uniSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093540441" allowfullscreen></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093540433" allowfullscreen></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093540426" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 50px">High School Kicks</h2>
+        <div class="swiper hsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093401331" allowfullscreen></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093540421" allowfullscreen></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://player.vimeo.com/video/1093540411" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Andrew's Portfolio</footer>
+
+    <!-- Swiper & Scroll Scripts (AFTER body content) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new Swiper(".uniSwiper", {
+          navigation: {
+            nextEl: ".uniSwiper .swiper-button-next",
+            prevEl: ".uniSwiper .swiper-button-prev",
+          },
+          loop: true,
+        });
+
+        new Swiper(".hsSwiper", {
+          navigation: {
+            nextEl: ".hsSwiper .swiper-button-next",
+            prevEl: ".hsSwiper .swiper-button-prev",
+          },
+          loop: true,
+        });
+      });
+
+      // Scroll behavior
+      const content = document.querySelector(".content");
+      const hero = document.querySelector(".hero");
+
+      window.addEventListener("scroll", () => {
+        const trigger = window.scrollY > 20;
+        content.classList.toggle("reveal", trigger);
+        hero.classList.toggle("scrolled", trigger);
+      });
+    </script>
+  </body>
+</html>
