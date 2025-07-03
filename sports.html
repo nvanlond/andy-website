@@ -128,7 +128,9 @@
         </div>
 
         <!-- High School Kicks -->
-        <h2 style="text-align: center; margin-top: 50px">High School Practice Snaps</h2>
+        <h2 style="text-align: center; margin-top: 50px">
+          High School Practice Snaps
+        </h2>
         <div class="swiper hsSwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -252,8 +254,89 @@
 
       <section id="projects" class="card">
         <h2>Hockey - <i>Center</i></h2>
-      </section>
+        <h2 style="text-align: center; margin-top: 50px">
+          Saint John the Evangelist Hockey Highlights
+        </h2>
+        <div class="swiper saintSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe
+                src="https://player.vimeo.com/video/VIDEO_ID_1"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe
+                src="https://player.vimeo.com/video/VIDEO_ID_2"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <!-- Add more if needed -->
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
 
+        <div class="swiper saintThumbs" style="margin-top: 10px">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://i.vimeocdn.com/video/THUMB_ID_1.jpg"
+                alt="thumb 1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://i.vimeocdn.com/video/THUMB_ID_2.jpg"
+                alt="thumb 2"
+              />
+            </div>
+            <!-- Add more if needed -->
+          </div>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 50px">
+          NAVY Hockey Highlights
+        </h2>
+        <!-- NAVY Hockey Swiper -->
+        <div class="swiper navySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe
+                src="https://player.vimeo.com/video/VIDEO_ID_1"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe
+                src="https://player.vimeo.com/video/VIDEO_ID_2"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <!-- Add more as needed -->
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="swiper navyThumbs" style="margin-top: 10px">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://i.vimeocdn.com/video/THUMB_ID_1.jpg"
+                alt="thumb 1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://i.vimeocdn.com/video/THUMB_ID_2.jpg"
+                alt="thumb 2"
+              />
+            </div>
+            <!-- Add more thumbnails to match videos -->
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>&copy; 2025 Andrew's Portfolio</footer>
@@ -321,6 +404,66 @@
             swiper.clickedSlide.dataset.swiperSlideIndex
           );
           hsSwiper.slideToLoop(realIndex);
+        });
+        // Saint John Thumbnails
+        const saintThumbs = new Swiper(".saintThumbs", {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          freeMode: true,
+          loop: true,
+          watchSlidesProgress: true,
+        });
+
+        const saintSwiper = new Swiper(".saintSwiper", {
+          loop: true,
+          navigation: {
+            nextEl: ".saintSwiper .swiper-button-next",
+            prevEl: ".saintSwiper .swiper-button-prev",
+          },
+          on: {
+            slideChange: function () {
+              const realIndex = this.realIndex;
+              saintThumbs.slideToLoop(realIndex);
+            },
+          },
+        });
+
+        saintThumbs.on("click", (swiper) => {
+          if (!swiper.clickedSlide) return;
+          const realIndex = parseInt(
+            swiper.clickedSlide.dataset.swiperSlideIndex
+          );
+          saintSwiper.slideToLoop(realIndex);
+        });
+        // NAVY Thumbnails
+        const navyThumbs = new Swiper(".navyThumbs", {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          freeMode: true,
+          loop: true,
+          watchSlidesProgress: true,
+        });
+
+        const navySwiper = new Swiper(".navySwiper", {
+          loop: true,
+          navigation: {
+            nextEl: ".navySwiper .swiper-button-next",
+            prevEl: ".navySwiper .swiper-button-prev",
+          },
+          on: {
+            slideChange: function () {
+              const realIndex = this.realIndex;
+              navyThumbs.slideToLoop(realIndex);
+            },
+          },
+        });
+
+        navyThumbs.on("click", (swiper) => {
+          if (!swiper.clickedSlide) return;
+          const realIndex = parseInt(
+            swiper.clickedSlide.dataset.swiperSlideIndex
+          );
+          navySwiper.slideToLoop(realIndex);
         });
       });
 
