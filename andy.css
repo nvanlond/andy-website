@@ -26,6 +26,20 @@
   color: #000;
 }
 
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide-thumb-active img {
+  opacity: 1;
+  border: 2px solid #333;
+}
+
 body {
   line-height: 1.6;
   color: #f0f0f0;
