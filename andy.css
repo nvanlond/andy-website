@@ -147,6 +147,69 @@ body {
   transition: opacity 1s ease, filter 1s ease;
 }
 
+.about-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.about-box {
+
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-left-box {
+  background: #00000040;
+
+  flex: 2;
+  color: white;
+}
+
+.about-right-box {
+  background: #00000040;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-right-box img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.about-section h2 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left-box,
+  .about-right-box {
+    flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-right-box img {
+    max-width: 70%;
+  }
+}
+
 .hero.scrolled {
   opacity: 0;
   filter: blur(2px);
